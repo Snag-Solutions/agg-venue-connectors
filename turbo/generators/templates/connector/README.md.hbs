@@ -1,0 +1,18 @@
+# {{displayName}}
+
+Generated connector scaffold for `{{kebabCase id}}`.
+
+Start here:
+
+- `src/manifest.ts` declares capabilities, setup, watchers, and charting.
+- `src/execution.ts` returns host-neutral execution plans.
+- `src/charting.ts` resolves chart requests to venue chart identifiers.
+- `src/fixtures.ts` owns code-generated fixture data.
+- `rust/` implements the Rust market-data connector when enabled.
+
+Run:
+
+```sh
+pnpm --filter @agg/venue-{{kebabCase id}} test
+pnpm --filter @agg/venue-{{kebabCase id}} build
+```

@@ -1,0 +1,13 @@
+import type { ExecutionBuildInput } from "@agg/execution-kit";
+
+export const {{camelCase id}}BuyFixture = {
+  userId: "user-fixture",
+  clientOrderId: "{{kebabCase id}}-buy-fixture",
+  side: "buy",
+  walletAddress: "0x0000000000000000000000000000000000000001",
+  venueMarketId: "{{kebabCase id}}-market-fixture",
+  outcomeId: "yes",
+  quantity: "10",
+  limitPrice: "0.51",
+  metadata: {}
+} satisfies ExecutionBuildInput;

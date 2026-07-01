@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/venue-manifest" },
+    { "path": "./packages/execution-kit" },
+    { "path": "./packages/execution-testkit" }
+  ]
+}

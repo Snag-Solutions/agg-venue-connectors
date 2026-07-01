@@ -1,0 +1,35 @@
+import { CONNECTOR_API_VERSION, defineAggVenue } from "@agg/venue-manifest";
+
+export const {{constantCase id}}_CHAIN_ID = {{chainId}};
+
+export const {{camelCase id}}Manifest = defineAggVenue({
+  id: "{{kebabCase id}}",
+  displayName: "{{displayName}}",
+  apiVersion: CONNECTOR_API_VERSION,
+  package: {
+    npm: "@agg/venue-{{kebabCase id}}",
+    crate: "agg-venue-{{kebabCase id}}"
+  },
+  capabilities: {
+    discovery: true,
+    orderbook: true,
+    chartBars: true,
+    execution: { buy: true, sell: true }
+  },
+  chains: [{{constantCase id}}_CHAIN_ID],
+  env: [
+    {
+      name: "{{constantCase id}}_API_BASE",
+      required: true,
+      description: "{{displayName}} API base URL."
+    }
+  ],
+  setup: [],
+  watchers: [],
+  charting: {
+    identifierSource: "connectorResolved",
+    supportedIntervals: ["1m", "5m", "15m", "1h", "1d"],
+    complementPolicy: "none"
+  },
+  notes: ["Generated scaffold. Replace fixture values with venue-specific behavior."]
+});

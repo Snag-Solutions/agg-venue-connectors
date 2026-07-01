@@ -1,0 +1,25 @@
+{
+  "name": "@agg/venue-example",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run src"
+  },
+  "dependencies": {
+    "@agg/execution-kit": "workspace:*",
+    "@agg/venue-manifest": "workspace:*"
+  },
+  "devDependencies": {
+    "@agg/execution-testkit": "workspace:*"
+  }
+}

@@ -1,0 +1,6 @@
+import { runExecutionConnectorConformance } from "@agg/execution-testkit";
+import { {{camelCase id}}BuyFixture, {{camelCase id}}Execution } from "./index";
+
+runExecutionConnectorConformance("{{kebabCase id}}", {{camelCase id}}Execution, {
+  buyInput: {{camelCase id}}BuyFixture
+});

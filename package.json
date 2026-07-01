@@ -1,0 +1,30 @@
+{
+  "name": "agg-venue-connectors",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.7.0",
+  "scripts": {
+    "artifacts": "tsx scripts/generate-artifacts.ts",
+    "build": "pnpm build:ts && cargo build --workspace",
+    "build:ts": "turbo run build",
+    "check": "pnpm artifacts && pnpm lint && pnpm typecheck && pnpm test && cargo fmt --check && cargo clippy --workspace --all-targets -- -D warnings",
+    "format": "prettier --write \"**/*.{ts,js,json,md,yml,yaml}\" && cargo fmt",
+    "lint": "node scripts/lint-connectors.mjs",
+    "new:connector": "turbo gen connector",
+    "test": "pnpm test:ts && pnpm test:rust",
+    "test:rust": "cargo test --workspace",
+    "test:ts": "turbo run test",
+    "typecheck": "turbo run build"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^2.6.3",
+    "@types/node": "^26.0.0",
+    "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
+    "turbo": "^2.6.3",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4",
+    "zod": "^4.4.3"
+  }
+}

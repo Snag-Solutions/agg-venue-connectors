@@ -1,0 +1,14 @@
+import { createDeclarativeExecutionConnector } from "@agg/execution-kit";
+import { resolve{{pascalCase id}}ChartRequest } from "./charting";
+import { {{camelCase id}}Manifest } from "./manifest";
+
+export const {{camelCase id}}Execution = createDeclarativeExecutionConnector({
+  manifest: {{camelCase id}}Manifest,
+  statusFilter: {
+    channel: "venue.{{kebabCase id}}.order-status",
+    key: "venueOrderId",
+    valueSource: "venueOrderId",
+    retryOnTimeout: false
+  },
+  resolveChartRequest: resolve{{pascalCase id}}ChartRequest
+});

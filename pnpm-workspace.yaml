@@ -1,0 +1,5 @@
+packages:
+  - "connectors/*"
+  - "packages/*"
+allowBuilds:
+  esbuild: true
